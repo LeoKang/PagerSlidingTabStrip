@@ -47,6 +47,9 @@ public class MainActivity extends FragmentActivity {
 	private Drawable oldBackground = null;
 	private int currentColor = 0xFF666666;
 
+	FragInner fragInner;
+	FragOuter fragOuter;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,6 +68,11 @@ public class MainActivity extends FragmentActivity {
 		tabs.setViewPager(pager);
 
 		changeColor(currentColor);
+
+		fragInner = new FragInner();
+        fragOuter = new FragOuter();
+
+
 	}
 
 	@Override
@@ -175,8 +183,9 @@ public class MainActivity extends FragmentActivity {
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {
 
-		private final String[] TITLES = { "Categories", "Home", "Top Paid", "Top Free", "Top Grossing", "Top New Paid",
-				"Top New Free", "Trending" };
+//		private final String[] TITLES = { "Categories", "Home", "Top Paid", "Top Free", "Top Grossing", "Top New Paid",
+//				"Top New Free", "Trending" };
+		private final String[] TITLES = { "내부사용자", "외부사용자" };
 
 		public MyPagerAdapter(FragmentManager fm) {
 			super(fm);
@@ -193,10 +202,24 @@ public class MainActivity extends FragmentActivity {
 		}
 
 		@Override
-		public Fragment getItem(int position) {
-			return SuperAwesomeCardFragment.newInstance(position);
-		}
+//		public Fragment getItem(int position) {
+//			return SuperAwesomeCardFragment.newInstance(position);
+//		}
 
+        public Fragment getItem(int position) {
+		    Fragment retFrag = null;
+		    switch(position) {
+                case 0:
+                    retFrag = new FragInner();
+                    break;
+                case 1:
+                    retFrag = new FragOuter();
+                    break;
+            }
+
+//			return SuperAwesomeCardFragment.newInstance(position);
+            return retFrag;
+		}
 	}
 
 }

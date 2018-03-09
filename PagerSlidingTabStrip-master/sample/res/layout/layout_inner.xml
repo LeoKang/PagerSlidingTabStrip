@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Spinner
+            android:id="@+id/svrAdrs"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dip"/>
+
+        <EditText
+            android:id="@+id/etID"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dip"
+            android:layout_weight="20"
+            android:hint="Input ID"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/etPWD"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dip"
+            android:layout_weight="5"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="5"
+            android:layout_marginBottom="20dp"
+            android:text="Login" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="5"
+            android:text="Logout" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+</LinearLayout>
